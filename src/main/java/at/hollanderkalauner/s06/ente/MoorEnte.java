@@ -1,20 +1,21 @@
-package at.hollanderkalauner.s06;
+package at.hollanderkalauner.s06.ente;
 
 import at.hollanderkalauner.s06.interfaces.Beobachter;
 import at.hollanderkalauner.s06.interfaces.Quakfaehig;
+import at.hollanderkalauner.s06.SenderRing;
 
-public class LockPfeife implements Quakfaehig {
+public class MoorEnte implements Quakfaehig {
 	SenderRing senderRing;
 
-	public LockPfeife() {
+	public MoorEnte() {
 		senderRing = new SenderRing(this);
 	}
- 
+
 	public void quaken() {
-		System.out.println("Kwaak");
+		System.out.println("Quak");
 		benachrichtigeBeobachtende();
 	}
- 
+
 	public void registriereBeobachter(Beobachter beobachter) {
 		senderRing.registriereBeobachter(beobachter);
 	}
@@ -22,8 +23,8 @@ public class LockPfeife implements Quakfaehig {
 	public void benachrichtigeBeobachtende() {
 		senderRing.benachrichtigeBeobachtende();
 	}
- 
+
 	public String toString() {
-		return "Lockpfeife";
+		return "Moorente";
 	}
 }

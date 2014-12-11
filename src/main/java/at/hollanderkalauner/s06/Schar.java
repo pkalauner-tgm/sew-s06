@@ -5,38 +5,29 @@ import at.hollanderkalauner.s06.interfaces.Quakfaehig;
 
 import java.util.ArrayList;
 
-/**
- * Schar
- *
- * @author Paul Kalauner 4AHIT
- * @version 20141211.1
- */
-public class Schar {
-    private ArrayList<Quakfaehig> ar;
+public class Schar implements Quakfaehig {
+    ArrayList<Quakfaehig> quakende = new ArrayList<Quakfaehig>();
 
-    public Schar() {
-        this.ar = new ArrayList<Quakfaehig>();
-    }
-
-    public void hinzufuegen(Quakfaehig ente) {
-        ar.add(ente);
+    public void hinzufuegen(Quakfaehig quaker) {
+        quakende.add(quaker);
     }
 
     public void quaken() {
-        for (Quakfaehig cur : ar)
-            cur.quaken();
+        for (Quakfaehig quaker : quakende) {
+            quaker.quaken();
+        }
     }
 
     public void registriereBeobachter(Beobachter beobachter) {
-
+        for (Quakfaehig quaker : quakende) {
+            quaker.registriereBeobachter(beobachter);
+        }
     }
 
     public void benachrichtigeBeobachtende() {
-
     }
 
     public String toString() {
-        return ar.toString();
+        return "Entenschar";
     }
-
 }

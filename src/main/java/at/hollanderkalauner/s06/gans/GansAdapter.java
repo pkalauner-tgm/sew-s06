@@ -1,20 +1,23 @@
-package at.hollanderkalauner.s06;
+package at.hollanderkalauner.s06.gans;
 
 import at.hollanderkalauner.s06.interfaces.Beobachter;
 import at.hollanderkalauner.s06.interfaces.Quakfaehig;
+import at.hollanderkalauner.s06.SenderRing;
 
-public class LockPfeife implements Quakfaehig {
+public class GansAdapter implements Quakfaehig {
+	Gans gans;
 	SenderRing senderRing;
 
-	public LockPfeife() {
+	public GansAdapter(Gans gans) {
+		this.gans = gans;
 		senderRing = new SenderRing(this);
 	}
  
 	public void quaken() {
-		System.out.println("Kwaak");
+		gans.schnattern();
 		benachrichtigeBeobachtende();
 	}
- 
+
 	public void registriereBeobachter(Beobachter beobachter) {
 		senderRing.registriereBeobachter(beobachter);
 	}
@@ -22,8 +25,8 @@ public class LockPfeife implements Quakfaehig {
 	public void benachrichtigeBeobachtende() {
 		senderRing.benachrichtigeBeobachtende();
 	}
- 
+
 	public String toString() {
-		return "Lockpfeife";
+		return "sich als Ente ausgebende Gans";
 	}
 }

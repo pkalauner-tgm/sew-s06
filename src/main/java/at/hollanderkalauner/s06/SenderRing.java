@@ -3,36 +3,28 @@ package at.hollanderkalauner.s06;
 import at.hollanderkalauner.s06.interfaces.Beobachter;
 import at.hollanderkalauner.s06.interfaces.QuakBeobachtungsSubjekt;
 
-import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.ArrayList;
 
-/**
- * Created by rene on 12/11/14.
- */
 public class SenderRing implements QuakBeobachtungsSubjekt {
+    ArrayList<Beobachter> beobachtende = new ArrayList<Beobachter>();
+    QuakBeobachtungsSubjekt ente;
 
-    private QuakBeobachtungsSubjekt quakBeobachtungsSubjekt;
-
-    private ArrayList<Beobachter> beobachters;
-
-    public SenderRing(QuakBeobachtungsSubjekt quakBeobachtungsSubjekt) {
-        this.beobachters = new ArrayList<Beobachter>();
-        this.quakBeobachtungsSubjekt = quakBeobachtungsSubjekt;
+    public SenderRing(QuakBeobachtungsSubjekt ente) {
+        this.ente = ente;
     }
 
-    public Iterator<Beobachter> getBeobachtende() {
-        return beobachters.iterator();
+    public void registriereBeobachter(Beobachter beobachter) {
+        beobachtende.add(beobachter);
     }
 
-    @Override
     public void benachrichtigeBeobachtende() {
-        for (Beobachter b : this.beobachters) {
-            b.aktualisiere(this);
+        for (Beobachter beobachter : beobachtende) {
+            beobachter.aktualisieren(ente);
         }
     }
 
-    @Override
-    public void registriereBeobachter(Beobachter beobachter) {
-        this.beobachters.add(beobachter);
+    public Iterator<Beobachter> getBeobachtende() {
+        return beobachtende.iterator();
     }
 }

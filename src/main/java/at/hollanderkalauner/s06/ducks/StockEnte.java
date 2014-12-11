@@ -15,7 +15,7 @@ public class StockEnte implements Quakfaehig {
 
     @Override
     public void benachrichtigeBeobachtende() {
-        
+
     }
 
     @Override

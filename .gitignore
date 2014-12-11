@@ -6,6 +6,8 @@ target/
 *.jar
 *.war
 
+*.iml
+
 /error_hotspot.xml
 hs_err_pid*
 

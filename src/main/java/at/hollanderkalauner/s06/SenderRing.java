@@ -3,8 +3,8 @@ package at.hollanderkalauner.s06;
 import at.hollanderkalauner.s06.interfaces.Beobachter;
 import at.hollanderkalauner.s06.interfaces.QuakBeobachtungsSubjekt;
 
-import java.util.Iterator;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class SenderRing implements QuakBeobachtungsSubjekt {
     ArrayList<Beobachter> beobachtende = new ArrayList<Beobachter>();

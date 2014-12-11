@@ -1,5 +1,6 @@
 package at.hollanderkalauner.s06.ducks;
 
+import at.hollanderkalauner.s06.SenderRing;
 import at.hollanderkalauner.s06.interfaces.Beobachter;
 import at.hollanderkalauner.s06.interfaces.Quakfaehig;
 
@@ -7,6 +8,7 @@ import at.hollanderkalauner.s06.interfaces.Quakfaehig;
  * Created by rene on 12/11/14.
  */
 public class StockEnte implements Quakfaehig {
+    private SenderRing senderRing;
 
     @Override
     public void quaken() {

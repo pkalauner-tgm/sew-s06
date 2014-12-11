@@ -16,6 +16,7 @@ public class SenderRing implements QuakBeobachtungsSubjekt {
     private ArrayList<Beobachter> beobachters;
 
     public SenderRing(QuakBeobachtungsSubjekt quakBeobachtungsSubjekt) {
+        this.beobachters = new ArrayList<Beobachter>();
         this.quakBeobachtungsSubjekt = quakBeobachtungsSubjekt;
     }
 

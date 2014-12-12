@@ -21,12 +21,12 @@ public class EntenSimulator {
         Quakfaehig gummiEnte = entenfabrik.erzeugeGummiEnte();
         Quakfaehig gansEnte = new GansAdapter(new Gans());
 
-        Schar EntenSchar = new Schar();
+        Schar entenSchar = new Schar();
 
-        EntenSchar.hinzufuegen(moorEnte);
-        EntenSchar.hinzufuegen(lockPfeife);
-        EntenSchar.hinzufuegen(gummiEnte);
-        EntenSchar.hinzufuegen(gansEnte);
+        entenSchar.hinzufuegen(moorEnte);
+        entenSchar.hinzufuegen(lockPfeife);
+        entenSchar.hinzufuegen(gummiEnte);
+        entenSchar.hinzufuegen(gansEnte);
 
         Schar stockEntenSchar = new Schar();
 
@@ -40,14 +40,14 @@ public class EntenSimulator {
         stockEntenSchar.hinzufuegen(stockEnte3);
         stockEntenSchar.hinzufuegen(stockEnte4);
 
-        EntenSchar.hinzufuegen(stockEntenSchar);
+        entenSchar.hinzufuegen(stockEntenSchar);
 
         System.out.println("\nEntensimulator: mit Observer");
 
         Quakologe quakologe = new Quakologe();
-        EntenSchar.registriereBeobachter(quakologe);
+        entenSchar.registriereBeobachter(quakologe);
 
-        simulieren(EntenSchar);
+        simulieren(entenSchar);
 
         System.out.println("\nDie Enten haben " +
                 QuakZaehler.getQuaks() +

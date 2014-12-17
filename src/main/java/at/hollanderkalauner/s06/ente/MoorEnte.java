@@ -4,9 +4,18 @@ import at.hollanderkalauner.s06.SenderRing;
 import at.hollanderkalauner.s06.interfaces.Beobachter;
 import at.hollanderkalauner.s06.interfaces.Quakfaehig;
 
+/**
+ * MoorEnte
+ *
+ * @author tlins
+ * @version 1.0
+ */
 public class MoorEnte implements Quakfaehig {
     SenderRing senderRing;
 
+    /**
+     * Initialisiert eine MoorEnte
+     */
     public MoorEnte() {
         senderRing = new SenderRing(this);
     }

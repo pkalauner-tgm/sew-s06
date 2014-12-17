@@ -4,9 +4,18 @@ import at.hollanderkalauner.s06.SenderRing;
 import at.hollanderkalauner.s06.interfaces.Beobachter;
 import at.hollanderkalauner.s06.interfaces.Quakfaehig;
 
+/**
+ * GummiEnte
+ *
+ * @author tlins
+ * @version 1.0
+ */
 public class GummiEnte implements Quakfaehig {
-    SenderRing senderRing;
+    private SenderRing senderRing;
 
+    /**
+     * Initialisiert eine GummiEnte
+     */
     public GummiEnte() {
         senderRing = new SenderRing(this);
     }

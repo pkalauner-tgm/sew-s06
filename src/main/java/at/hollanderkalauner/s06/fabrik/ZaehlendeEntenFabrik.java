@@ -7,6 +7,13 @@ import at.hollanderkalauner.s06.ente.MoorEnte;
 import at.hollanderkalauner.s06.ente.StockEnte;
 import at.hollanderkalauner.s06.interfaces.Quakfaehig;
 
+/**
+ * Erzeugt Enten. <br>
+ * Die Quaks werden mitgezaehlt
+ *
+ * @author tlins
+ * @version 1.0
+ */
 public class ZaehlendeEntenFabrik extends AbstrakteEntenFabrik {
 
     public Quakfaehig erzeugeStockEnte() {

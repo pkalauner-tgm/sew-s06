@@ -6,7 +6,16 @@ import at.hollanderkalauner.s06.gans.Gans;
 import at.hollanderkalauner.s06.gans.GansAdapter;
 import at.hollanderkalauner.s06.interfaces.Quakfaehig;
 
+/**
+ * Hauptklasse
+ */
 public class EntenSimulator {
+
+    /**
+     * Eintrittspunkt des Programmes
+     *
+     * @param args nicht verwendet
+     */
     public static void main(String[] args) {
         EntenSimulator simulator = new EntenSimulator();
         AbstrakteEntenFabrik entenFabrik = new ZaehlendeEntenFabrik();
@@ -14,6 +23,11 @@ public class EntenSimulator {
         simulator.simulieren(entenFabrik);
     }
 
+    /**
+     * Startet Simulation mit der angegebenen entenfabrik
+     *
+     * @param entenfabrik Instanz von Entenfabrik
+     */
     void simulieren(AbstrakteEntenFabrik entenfabrik) {
 
         Quakfaehig moorEnte = entenfabrik.erzeugeMoorEnte();
@@ -54,6 +68,11 @@ public class EntenSimulator {
                 "-mal gequakt.");
     }
 
+    /**
+     * Laesst eine Ente quaken
+     *
+     * @param ente Instanz von Ente
+     */
     void simulieren(Quakfaehig ente) {
         ente.quaken();
     }

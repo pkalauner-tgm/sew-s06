@@ -4,9 +4,18 @@ import at.hollanderkalauner.s06.SenderRing;
 import at.hollanderkalauner.s06.interfaces.Beobachter;
 import at.hollanderkalauner.s06.interfaces.Quakfaehig;
 
+/**
+ * StockEnte
+ *
+ * @author tlins
+ * @version 1.0
+ */
 public class StockEnte implements Quakfaehig {
     SenderRing senderRing;
 
+    /**
+     * Initialisiert eine StockEnte
+     */
     public StockEnte() {
         senderRing = new SenderRing(this);
     }

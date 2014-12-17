@@ -8,6 +8,9 @@ import at.hollanderkalauner.s06.interfaces.Quakfaehig;
 
 /**
  * Hauptklasse
+ *
+ * @author tlins
+ * @version 1.0
  */
 public class EntenSimulator {
 

@@ -33,6 +33,6 @@ public class TestGansAdapter {
         sor.startRedirect();
         ga.quaken();
         sor.stopRedirect();
-        assertEquals(true, sor.getString().contains("Schnatter"));
+        assertEquals("Schnatter" + System.lineSeparator(), sor.getString());
     }
 }

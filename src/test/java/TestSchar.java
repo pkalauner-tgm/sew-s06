@@ -35,7 +35,7 @@ public class TestSchar {
         schar.quaken();
         sor.stopRedirect();
 
-        assertEquals(true, sor.getString().contains("Quietsch"));
+        assertEquals("Quietsch" + System.lineSeparator(), sor.getString());
     }
 /*
     @Test
@@ -47,7 +47,7 @@ public class TestSchar {
         schar.quaken();
         sor.stopRedirect();
 
-        assertEquals("Quietsch\n", sor.getString());
+        assertEquals("Quietsch" + System.lineSeparator(), sor.getString());
     }
 */
 }

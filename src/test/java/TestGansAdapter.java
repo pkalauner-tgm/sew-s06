@@ -5,17 +5,27 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+
 /**
- * Created by Paul on 17.12.2014.
+ * Testet den GansAdapter
+ *
+ * @author Paul Kalauner 4AHIT
+ * @version 20141217.1
  */
 public class TestGansAdapter {
     private SystemOutRedirect sor;
 
+    /**
+     * Before
+     */
     @Before
     public void setUp() {
         this.sor = new SystemOutRedirect();
     }
 
+    /**
+     * Testet den GansAdapter
+     */
     @Test
     public void testGans() {
         Gans g = new Gans();

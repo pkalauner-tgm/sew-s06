@@ -3,6 +3,12 @@ package at.hollanderkalauner.s06;
 import at.hollanderkalauner.s06.interfaces.Beobachter;
 import at.hollanderkalauner.s06.interfaces.Quakfaehig;
 
+/**
+ * QuakZaehler
+ *
+ * @author tlins
+ * @version 1
+ */
 public class QuakZaehler implements Quakfaehig {
     Quakfaehig ente;
     static int anzahlDerQuaks;
@@ -16,10 +22,18 @@ public class QuakZaehler implements Quakfaehig {
         anzahlDerQuaks++;
     }
 
+    /**
+     * Setzt den Zaehler zurueck
+     */
     public static void resetZaehler() {
         anzahlDerQuaks = 0;
     }
 
+    /**
+     * Liefert die Anzahl der Quaks zuruek
+     *
+     * @return anzahl der Quaks
+     */
     public static int getQuaks() {
         return anzahlDerQuaks;
     }

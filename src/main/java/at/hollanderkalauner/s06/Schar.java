@@ -5,9 +5,20 @@ import at.hollanderkalauner.s06.interfaces.Quakfaehig;
 
 import java.util.ArrayList;
 
+/**
+ * Schar
+ *
+ * @author tlins
+ * @version 1.0
+ */
 public class Schar implements Quakfaehig {
     ArrayList<Quakfaehig> quakende = new ArrayList<Quakfaehig>();
 
+    /**
+     * Fuegt ein Quakfaehig Objekt zur Schar hinzu
+     *
+     * @param quaker Quafaehig Instanz
+     */
     public void hinzufuegen(Quakfaehig quaker) {
         quakende.add(quaker);
     }

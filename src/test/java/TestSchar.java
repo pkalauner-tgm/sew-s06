@@ -6,17 +6,26 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by rene on 12/17/14.
+ * Testet die Schar
+ *
+ * @author Rene Hollander 4AHIT
+ * @version 20141217.1
  */
 public class TestSchar {
 
     private SystemOutRedirect sor;
 
+    /**
+     * Before
+     */
     @Before
     public void reset() {
         this.sor = new SystemOutRedirect();
     }
 
+    /**
+     * Testet das Hinzufuegen von Quackfaehig Objekten
+     */
     @Test
     public void testAddQuackable() {
         Schar schar = new Schar();

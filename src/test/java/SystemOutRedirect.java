@@ -2,7 +2,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 /**
- * Created by rene on 12/17/14.
+ * Leitet System.out um
+ *
+ * @author Rene Hollander 4AHIT
+ * @version 20141217.1
  */
 public class SystemOutRedirect {
 
@@ -11,10 +14,9 @@ public class SystemOutRedirect {
 
     private String string;
 
-    public SystemOutRedirect() {
-
-    }
-
+    /**
+     * Startet die Umleitung
+     */
     public void startRedirect() {
         if (this.output != null) {
             throw new RuntimeException("Sysout is currently redirected!");
@@ -24,6 +26,9 @@ public class SystemOutRedirect {
         System.setOut(new PrintStream(this.output));
     }
 
+    /**
+     * Stoppt die Umleitung
+     */
     public void stopRedirect() {
         System.out.flush();
         System.setOut(this.old);
@@ -31,6 +36,11 @@ public class SystemOutRedirect {
         this.output = null;
     }
 
+    /**
+     * Liefert den Inhalt zurueck
+     *
+     * @return String
+     */
     public String getString() {
         return this.string;
     }

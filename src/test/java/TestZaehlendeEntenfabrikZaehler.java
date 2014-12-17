@@ -8,18 +8,27 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by Paul on 17.12.2014.
+ * Testet die zaehlende Entenfabrik und den QuakZaehler
+ *
+ * @author Paul Kalauner 4AHIT
+ * @version 20141217.1
  */
-public class TestZaehlendeEntenfabrik {
+public class TestZaehlendeEntenfabrikZaehler {
 
     private AbstrakteEntenFabrik entenFabrik;
 
+    /**
+     * Intialisiert vor jedem Testcase die Entenfabrik
+     */
     @Before
     public void setUp() {
         this.entenFabrik = new ZaehlendeEntenFabrik();
         QuakZaehler.resetZaehler();
     }
 
+    /**
+     * Testet das Erzeugen einer GummiEnte
+     */
     @Test
     public void testErzeugeGummiEnte() {
         Quakfaehig q = this.entenFabrik.erzeugeGummiEnte();
@@ -27,6 +36,9 @@ public class TestZaehlendeEntenfabrik {
         assertEquals(1, QuakZaehler.getQuaks());
     }
 
+    /**
+     * Testet das Erzeugen einer StockEnte
+     */
     @Test
     public void testErzeugeStockEnte() {
         Quakfaehig q = this.entenFabrik.erzeugeStockEnte();
@@ -34,6 +46,9 @@ public class TestZaehlendeEntenfabrik {
         assertEquals(1, QuakZaehler.getQuaks());
     }
 
+    /**
+     * Testet das Erzeugen einer MoorEnte
+     */
     @Test
     public void testErzeugeMoorEnte() {
         Quakfaehig q = this.entenFabrik.erzeugeMoorEnte();
@@ -41,6 +56,9 @@ public class TestZaehlendeEntenfabrik {
         assertEquals(1, QuakZaehler.getQuaks());
     }
 
+    /**
+     * Testet das Erzeugen einer LockPfeife
+     */
     @Test
     public void testErzeugeLockPfeife() {
         Quakfaehig q = this.entenFabrik.erzeugeLockPfeife();
@@ -48,12 +66,18 @@ public class TestZaehlendeEntenfabrik {
         assertEquals(1, QuakZaehler.getQuaks());
     }
 
+    /**
+     * Testet den Zaehler ohne Quaks
+     */
     @Test
     public void testNoQuaks() {
         this.entenFabrik.erzeugeLockPfeife();
         assertEquals(0, QuakZaehler.getQuaks());
     }
 
+    /**
+     * Testet den Zaehler mit mehreren Quaks
+     */
     @Test
     public void testMultipleQuaks() {
         Quakfaehig q = this.entenFabrik.erzeugeMoorEnte();

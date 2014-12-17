@@ -3,11 +3,13 @@ import at.hollanderkalauner.s06.gans.GansAdapter;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 /**
  * Created by Paul on 17.12.2014.
  */
 public class TestGansAdapter {
-        private SystemOutRedirect sor;
+    private SystemOutRedirect sor;
 
     @Before
     public void setUp() {
@@ -18,7 +20,9 @@ public class TestGansAdapter {
     public void testGans() {
         Gans g = new Gans();
         GansAdapter ga = new GansAdapter(g);
+        sor.startRedirect();
         ga.quaken();
-       // assertEquals("Schnatter", outContent.toString());
+        sor.stopRedirect();
+        assertEquals(true, sor.getString().contains("Schnatter"));
     }
 }

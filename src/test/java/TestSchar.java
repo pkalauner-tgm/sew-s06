@@ -28,5 +28,17 @@ public class TestSchar {
 
         assertEquals("Quietsch\n", sor.getString());
     }
+/*
+    @Test
+    public void testRegistriereBeobachtende() {
+        Schar schar = new Schar();
+        schar.hinzufuegen(new GummiEnte());
 
+        sor.startRedirect();
+        schar.quaken();
+        sor.stopRedirect();
+
+        assertEquals("Quietsch\n", sor.getString());
+    }
+*/
 }

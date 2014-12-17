@@ -16,6 +16,10 @@ public class QuakZaehler implements Quakfaehig {
         anzahlDerQuaks++;
     }
 
+    public static void resetZaehler() {
+        anzahlDerQuaks = 0;
+    }
+
     public static int getQuaks() {
         return anzahlDerQuaks;
     }

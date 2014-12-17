@@ -17,6 +17,7 @@ public class TestZaehlendeEntenfabrik {
     @Before
     public void setUp() {
         this.entenFabrik = new ZaehlendeEntenFabrik();
+        QuakZaehler.resetZaehler();
     }
 
     @Test
@@ -46,4 +47,20 @@ public class TestZaehlendeEntenfabrik {
         q.quaken();
         assertEquals(1, QuakZaehler.getQuaks());
     }
+
+    @Test
+    public void testNoQuaks() {
+        this.entenFabrik.erzeugeLockPfeife();
+        assertEquals(0, QuakZaehler.getQuaks());
+    }
+
+    @Test
+    public void testMultipleQuaks() {
+        Quakfaehig q = this.entenFabrik.erzeugeMoorEnte();
+        for (int i = 0; i < 10; i++)
+            q.quaken();
+        assertEquals(10, QuakZaehler.getQuaks());
+    }
+
+
 }

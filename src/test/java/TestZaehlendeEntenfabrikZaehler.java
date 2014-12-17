@@ -1,4 +1,6 @@
 import at.hollanderkalauner.s06.QuakZaehler;
+import at.hollanderkalauner.s06.Quakologe;
+import at.hollanderkalauner.s06.ente.MoorEnte;
 import at.hollanderkalauner.s06.fabrik.AbstrakteEntenFabrik;
 import at.hollanderkalauner.s06.fabrik.ZaehlendeEntenFabrik;
 import at.hollanderkalauner.s06.interfaces.Quakfaehig;
@@ -16,14 +18,16 @@ import static org.junit.Assert.assertEquals;
 public class TestZaehlendeEntenfabrikZaehler {
 
     private AbstrakteEntenFabrik entenFabrik;
+    private SystemOutRedirect sor;
 
     /**
-     * Intialisiert vor jedem Testcase die Entenfabrik
+     * Intialisiert vor jedem Testcase die Entenfabrik und setzt den Zaehler zurueck
      */
     @Before
     public void setUp() {
         this.entenFabrik = new ZaehlendeEntenFabrik();
         QuakZaehler.resetZaehler();
+        this.sor = new SystemOutRedirect();
     }
 
     /**
@@ -86,5 +90,17 @@ public class TestZaehlendeEntenfabrikZaehler {
         assertEquals(10, QuakZaehler.getQuaks());
     }
 
+    @Test
+    public void testRegistriereBeobachter() {
+        QuakZaehler zaehler = new QuakZaehler(new MoorEnte());
+        Quakologe quakologe = new Quakologe();
+        zaehler.registriereBeobachter(quakologe);
+        sor.startRedirect();
+        zaehler.quaken();
+        sor.stopRedirect();
+
+
+        assertEquals("Quak" + System.lineSeparator() + "Quakologe: Moorente hat gerade gequakt." + System.lineSeparator(), sor.getString());
+    }
 
 }

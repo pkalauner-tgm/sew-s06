@@ -1,3 +1,4 @@
+import at.hollanderkalauner.s06.Quakologe;
 import at.hollanderkalauner.s06.gans.Gans;
 import at.hollanderkalauner.s06.gans.GansAdapter;
 import org.junit.Before;
@@ -35,4 +36,21 @@ public class TestGansAdapter {
         sor.stopRedirect();
         assertEquals("Schnatter" + System.lineSeparator(), sor.getString());
     }
+
+    /**
+     * Testet das Registrieren des Beobachters
+     */
+    @Test
+    public void testRegistriereBeobachtende() {
+        GansAdapter gansAdapter = new GansAdapter(new Gans());
+        Quakologe quakologe = new Quakologe();
+        gansAdapter.registriereBeobachter(quakologe);
+
+        sor.startRedirect();
+        gansAdapter.quaken();
+        sor.stopRedirect();
+
+        assertEquals("Schnatter" + System.lineSeparator() + "Quakologe: sich als Ente ausgebende Gans hat gerade gequakt." + System.lineSeparator(), sor.getString());
+    }
+
 }
